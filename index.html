@@ -115,37 +115,70 @@
     </section>
     <section id="order">
       <h2>Place an Order</h2>
-      <form action="https://formspree.io/f/mvgandee" method="POST" class="order-form" target="_blank">
-        <label for="name">Your Name:</label>
-        <input type="text" name="name" id="name" required />
+<form id="order-form" class="order-form" action="https://formspree.io/f/mvgandee" method="POST">
+  <label for="product">Select Product:</label>
+  <select name="product" id="product" required>
+    <option value="">choose an item</option>
+    <option value="doubleLayeredCake">Double Layered Cake</option>
+    <option value="cupcakes">Cupcakes</option>
+    <option value="bentoCake">Bento Cake</option>
+    <option value="brownies">Brownies</option>
+    <option value="cinnamonRolls">Cinnamon Rolls</option>
+    <option value="strawberryRolls">Strawberry Rolls</option>
+  </select>
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" name="phone" id="phone" required />
+  <div id="flavor-container" >
+    <label for="flavor">Choose Flavor:</label>
+    <select name="flavor" id="flavor"></select>
+  </div>
 
-        <label for="item">Select Item:</label>
-        <select name="item" id="item" required>
-          <option value="">--Choose an item--</option>
-          <option value="Double Layered Cake">Double Layered Cake</option>
-          <option value="Classic Brownies">Classic Brownies</option>
-          <option value="Cup Cakes">Cup Cakes</option>
-          <option value="Bento Cake">Bento Cake</option>
-          <option value="Strawberry Roll">Strawberry Roll</option>
-          <option value="Cinnamon Roll">Cinnamon Roll</option>
-        </select>
+  <div id="type-container" >
+    <label for="type">Choose Type:</label>
+    <select name="type" id="type"></select>
+  </div>
 
-        <label for="quantity">Quantity:</label>
-        <input type="number" name="quantity" id="quantity" min="1" required />
+  <div id="size-container" >
+    <label for="size">Choose Size:</label>
+    <select name="size" id="size"></select>
+  </div>
 
-        <label for="date">Pickup/Delivery Date:</label>
-        <input type="date" name="date" id="date" required />
+  <div id="quantity-container">
+    <label for="quantity">Choose Quantity:</label>
+    <select name="quantity" id="quantity"></select>
+  </div>
 
-        <label for="notes">Special Instructions:</label>
-        <textarea name="notes" id="notes" rows="4"></textarea>
-        <button type="submit">Submit Order</button>
-      </form>
+  <div style="margin-top:10px;">
+    <label for="name">Your Name:</label>
+    <input type="text" name="name" id="name" required />
+  </div>
+
+  <div style="margin-top:10px;">
+    <label for="phone">Phone Number:</label>
+    <input type="tel" name="phone" id="phone" required />
+  </div>
+
+  <div style="margin-top:10px;">
+    <label for="date">Pickup/Delivery Date:</label>
+    <input type="date" name="date" id="date" required />
+  </div>
+
+  <div >
+    <label for="notes">Special Instructions:</label>
+    <textarea name="notes" id="notes" rows="4"></textarea>
+  </div>
+
+  <div >
+    <strong>Price: ₦<span id="price">0</span></strong>
+  </div>
+
+  <button type="submit" style="margin-top:15px;">Submit Order</button>
+
+  <div id="form-message" style="margin-top: 1em;"></div>
+</form>
+
       <div class="whatsapp-order">
         <p>Prefer to chat? Order via WhatsApp:</p>
-        <button type="button" onclick="sendWhatsAppMessage()" class="whatsapp-button">
+        <button type="button" onclick="sendWhatsAppMessage()" class="whatsapp-button" id="whatsapp-button">
           <i class="fa-brands fa-whatsapp"></i> Message Us
         </button>
       </div>
@@ -164,13 +197,33 @@
     </section>
     <section id="review">
       <h2>Leave us a Review</h2>
-      <form action="https://formspree.io/f/mvgandee" method="POST" class="review-form" target="_blank">
-        <label for="name">Your Name:</label>
-        <input placeholder="enter your name" type="text" name="name" id="name1" required />
-        <label for="review">Your Review:</label>
-        <textarea placeholder="what do you think?" name="review" id="review" rows="3" required></textarea>
-        <button type="submit">Send Review</button>
-      </form>
+      <form
+  action="https://formspree.io/f/mvgandee"
+  method="POST"
+  class="review-form"
+  id="review-form"
+>
+  <label for="name">Your Name:</label>
+  <input
+    placeholder="enter your name"
+    type="text"
+    name="name"
+    id="name1"
+    required
+  />
+  <label for="review">Your Review:</label>
+  <textarea
+    placeholder="what do you think?"
+    name="review"
+    id="review"
+    rows="3"
+    required
+  ></textarea>
+  <button type="submit">Send Review</button>
+</form>
+
+<div id="form-message" style="margin-top: 1em; color: green;"></div>
+
     </section>
     <section id="contact">
       <h2>Contact Us</h2>
