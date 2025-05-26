@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -212,6 +215,126 @@ section h2 {
   font-size: 1rem;
   color: #643520c2;
 }
+/* Order section overall */
+#order {
+  background-color: #fff8f4bd;
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.61);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Section heading */
+#order h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #743b1f;
+}
+
+/* Form layout */
+.order-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #030101;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  resize: none;
+ box-shadow: 0 4px 10px rgba(15, 8, 3, 0.151);
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  border-color: #140c06;
+  box-shadow: 0 4px 10px rgba(15, 8, 3, 0.986);
+  outline: none;
+}
+
+/* Price display */
+#order strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #241c15a9;
+}
+
+/* Submit button */
+.order-form button[type="submit"] {
+  background-color: rgba(150, 66, 66, 0.788);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.order-form button[type="submit"]:hover {
+  background-color: rgba(150, 66, 66, 0.973);
+}
+
+/* WhatsApp section */
+.whatsapp-order {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.whatsapp-order p {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #1da851;
+}
+
+.whatsapp-button i {
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  #order {
+    padding: 30px 15px;
+  }
+
+  .order-form button[type="submit"],
+  .whatsapp-button {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+}
 
 
 #contact p a {
@@ -309,72 +432,6 @@ section h2 {
   transform: scale(1.02);
   color: #00000081;
 }
-#order {
-  background: #fff7f5;
-  padding: 40px;
-  margin-top: 60px;
-  border-radius: 16px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.order-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 600px;
-  margin: auto;
-}
-
-.order-form label {
-  font-weight: bold;
-  color: #5d4333;
-}
-
-.order-form input,
-.order-form select,
-.order-form textarea {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-family: inherit;
-  box-shadow:0 3px 10px #07020283;
-  resize: none;
-}
-.order-form button {
-  background-color: #a85c4b;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.order-form button:hover {
-  background-color: #924c3a;
-}
-
-.whatsapp-order {
-  text-align: center;
-  margin-top: 20px;
-}
-
- .whatsapp-button{
-  background-color: #25d366;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  display: inline-block;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  border: none;
-}
-
-.whatsapp-button:hover {
-  background-color: #04753185;
-}
 /* Modal backdrop */
 .modal {
   display: none; /* hidden by default */
@@ -396,17 +453,18 @@ section h2 {
 
 
 .modal-content {
-  background-color: rgba(255, 192, 203, 0.575);
+  background-color: white;
   padding: 20px;
   border-radius: 12px;
   width: 100%;
   max-width: 400px;
   position: relative;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.274);
+  color: rgb(0, 0, 0);
 
 }
 .modal-content:hover {
-  background-color: rgba(255, 192, 203, 0.575);
+  background-color: pink;
 padding: 20px;
 border-radius: 12px;
 width: 100%;
@@ -414,6 +472,7 @@ max-width: 400px;
 position: relative;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.993);
 font-size: 15px;
+color: white;
 }
 
 .modal-close {
@@ -440,17 +499,20 @@ font-size: 15px;
   display: block;
   margin: 20px auto 0; 
   padding: 10px 20px;
-  background-color: #d2691e; 
-  color: white;
+  background-color: pink; 
+  color: rgba(255, 255, 255, 0.973);
   border: none;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.342);
 }
 
 .order-button:hover {
-  background-color: #a0522d;
+  background-color: rgb(245, 93, 118);
+  transition: background-color 0.3s ease;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.911);
 }
 body.modal-open {
   overflow: hidden;
